@@ -1,0 +1,61 @@
+site_name: Fr3d
+site_dir: "public"
+site_url: "https://prod.homelab.fr3d.dev"
+repo_url: https://github.com/alexrf45/homelab.fr3d.dev
+nav:
+  - Home: index.md
+  - Resources: resources.md
+  - Projects: projects.md
+  - Posts:
+    - Automate your Dotfiles: dotfiles_git.md
+    - Proxmox Post Install Part I: pve_post_install_part_I.md
+
+theme:
+  features:
+    - footer.prev_next
+    - navigation.side.hide
+    - navigation.side.indexes
+    - navigation.side.toc.hide
+    - navigation.top
+    - navigation.top.cursor_animation
+    - navigation.top.search_button.hide
+    - navigation.footer
+    - revision.date
+  font:
+    text: Fira Sans Condensed
+  favicon: img/favicon.ico
+  name: terminal
+  palette: gruvbox_dark
+  locale: en
+  color_mode: auto
+  analytics:
+    gtag: G-17T5VDVSM6
+markdown_extensions:
+  - attr_list
+  - toc:
+      baselevel: 2
+      permalink: true
+      separator: "_"
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      preserve_tabs: true
+  - pymdownx.highlight:
+      use_pygments: true          # use pygments library    
+      pygments_style: zenburn # use 'github-dark' style
+      noclasses: true             # update HTML style attr
+  - pymdownx.inlinehilite
+plugins:
+  - git-revision-date
+copyright: Copyright &copy; 2016 - 2024 fr3d
+extra:
+  generator: false
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/highlight.min.js
+  - https://unpkg.com/highlightjs-cobol/dist/cobol.min.js
+  - add_hljs_highlight.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/styles/a11y-dark.min.css
+ 
+

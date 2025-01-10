@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.7.0">
+     
+     
+    
+    <link rel="canonical" href="https://prod.homelab.fr3d.dev/dotfiles_git/"><link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Automate your Dotfiles - Fr3d</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- gruvbox_dark color palette -->
+<link href="../css/palettes/gruvbox_dark.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+</style>
+
+
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/styles/a11y-dark.min.css" rel="stylesheet">  
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/highlight.min.js"></script>
+    
+    <script src="https://unpkg.com/highlightjs-cobol/dist/cobol.min.js"></script>
+    
+    <script src="../add_hljs_highlight.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="https://prod.homelab.fr3d.dev/" class="no-style">Fr3d</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href=".." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../resources/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Resources</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../projects/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Projects</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                
+                    
+                    
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid">
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Tired of manually copying config files to your desktop or rewriting them everytime a new VM or machine is set up?</p>
+<p>There is easy way to back up your dotfiles and other important config: Git!</p>
+<p>Before we begin:
+- Make sure to set up an empty public repo named dotfiles and ensure a README is created.
+- Credentials for git access are set up (if cloning via ssh)</p>
+<p><strong>NOTE</strong>*: DO NOT STORE API KEYS &amp; OTHER SENSITIVE CREDENTIALS IN YOUR DOTFILES!</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>Below are some quick steps to get it set up:</p>
+<div class="highlight" style="background: #0d1117"><pre style="line-height: 125%;"><span></span><code><span style="color: #8B949E; font-style: italic">#this prevents you from commiting this directory to the repo creating a weird loop</span>
+<span style="color: #E6EDF3">echo</span><span style="color: #6E7681"> </span><span style="color: #A5D6FF">&quot;.cfg&quot;</span><span style="color: #6E7681"> </span>&gt;&gt;<span style="color: #6E7681"> </span>.gitignore
+
+<span style="color: #8B949E; font-style: italic">#clones the repo to the .cfg directory</span>
+git<span style="color: #6E7681"> </span>clone<span style="color: #6E7681"> </span>--bare<span style="color: #6E7681"> </span>git@github.com:ORG/dotfiles.git<span style="color: #6E7681"> </span><span style="color: #79C0FF">$HOME</span>/.cfg
+
+<span style="color: #8B949E; font-style: italic">#store this alias in your shell rc or alias file</span>
+<span style="color: #E6EDF3">alias</span><span style="color: #6E7681"> </span><span style="color: #79C0FF">dev</span><span style="color: #FF7B72; font-weight: bold">=</span><span style="color: #A5D6FF">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span><span style="color: #6E7681"> </span>
+
+<span style="color: #8B949E; font-style: italic">#cleans up your prompt so you only see untracked files when you explicitly ask for them</span>
+dev<span style="color: #6E7681"> </span>config<span style="color: #6E7681"> </span>--local<span style="color: #6E7681"> </span>status.showUntrackedFiles<span style="color: #6E7681"> </span>no
+</code></pre></div>
+<p>A few notes on the set up above:</p>
+<ul>
+<li>
+<p>Refresh your shell after adding the alias:
+  Example: <code>echo 'alias dev='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'' &gt;&gt; .bashrc OR .zshrc &amp;&amp; . ~/.bashrc or . ~/.zshrc</code></p>
+</li>
+<li>
+<p>Adding files to your repo goes as follows:
+  Example: <code>dev add FILE</code></p>
+</li>
+<li>
+<p>Commit Files:
+  Example: <code>dev commit -a</code></p>
+</li>
+<li>
+<p>Push to repo:
+  Example: <code>dev push</code></p>
+</li>
+<li>
+<p>Ensure the remote origin is configured to point to the dotfiles repo before the first push.</p>
+</li>
+</ul>
+<p>Here is a link to my public dotfiles for reference. <a href="https://github.com/alexrf45/dotfiles">dotfiles</a></p>
+<p>Feel free to explore and see what works for you. Until next time, stay curious my friends!</p>
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2025-01-10. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+            
+            <p class="text-center text-muted">Copyright &copy; 2016 - 2024 fr3d</p>
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+        <div id="terminal-mkdocs-footer-prev-next">
+            <nav class="btn-group">
+                <a href="../projects/" title="Projects">Previous</a>
+                |
+                <a href="../pve_post_install_part_I/" title="Proxmox Post Install Part I">Next</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    
+    
+</body>
+
+</html>
