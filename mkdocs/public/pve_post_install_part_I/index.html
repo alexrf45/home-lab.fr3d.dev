@@ -135,43 +135,43 @@
 <ul>
 <li>Add a non-root admin account at the OS level and for the web GUI: </li>
 </ul>
-<div class="highlight" style="background: #0d1117"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>user<span style="color: #6E7681"> </span>add<span style="color: #6E7681"> </span>admin@pve<span style="color: #6E7681"> </span>-comment<span style="color: #6E7681"> </span><span style="color: #A5D6FF">&quot;admin user&quot;</span>
+<div class="highlight" style="background: #3f3f3f"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>user<span style="color: #DCDCCC"> </span>add<span style="color: #DCDCCC"> </span>admin@pve<span style="color: #DCDCCC"> </span>-comment<span style="color: #DCDCCC"> </span><span style="color: #CC9393">&quot;admin user&quot;</span>
+<span style="color: #DCDCCC"> </span>
+$<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>passwd<span style="color: #DCDCCC"> </span>admin@pve
 
-$<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>passwd<span style="color: #6E7681"> </span>admin@pve
+$<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>group<span style="color: #DCDCCC"> </span>add<span style="color: #DCDCCC"> </span>admin<span style="color: #DCDCCC"> </span>-comment<span style="color: #DCDCCC"> </span><span style="color: #CC9393">&quot;System Administrators&quot;</span>
 
-$<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>group<span style="color: #6E7681"> </span>add<span style="color: #6E7681"> </span>admin<span style="color: #6E7681"> </span>-comment<span style="color: #6E7681"> </span><span style="color: #A5D6FF">&quot;System Administrators&quot;</span>
+$<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>acl<span style="color: #DCDCCC"> </span>modify<span style="color: #DCDCCC"> </span>/<span style="color: #DCDCCC"> </span>-group<span style="color: #DCDCCC"> </span>admin<span style="color: #DCDCCC"> </span>-role<span style="color: #DCDCCC"> </span>Administrator
 
-$<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>acl<span style="color: #6E7681"> </span>modify<span style="color: #6E7681"> </span>/<span style="color: #6E7681"> </span>-group<span style="color: #6E7681"> </span>admin<span style="color: #6E7681"> </span>-role<span style="color: #6E7681"> </span>Administrator
-
-$<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>user<span style="color: #6E7681"> </span>modify<span style="color: #6E7681"> </span>admin@pve<span style="color: #6E7681"> </span>-group<span style="color: #6E7681"> </span>admin
+$<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>user<span style="color: #DCDCCC"> </span>modify<span style="color: #DCDCCC"> </span>admin@pve<span style="color: #DCDCCC"> </span>-group<span style="color: #DCDCCC"> </span>admin
 </code></pre></div>
 <h4 id="add_sudo_user_on_the_debian_host">Add sudo user on the Debian Host:<a class="headerlink" href="#add_sudo_user_on_the_debian_host" title="Permanent link">&para;</a></h4>
-<div class="highlight" style="background: #0d1117"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6E7681"> </span>adduser<span style="color: #6E7681"> </span>admin
+<div class="highlight" style="background: #3f3f3f"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #DCDCCC"> </span>adduser<span style="color: #DCDCCC"> </span>admin
 
-$<span style="color: #6E7681"> </span>usermod<span style="color: #6E7681"> </span>-aG<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>admin
+$<span style="color: #DCDCCC"> </span>usermod<span style="color: #DCDCCC"> </span>-aG<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>admin
 
-$<span style="color: #6E7681"> </span>passwd<span style="color: #6E7681"> </span>admin<span style="color: #6E7681"> </span><span style="color: #8B949E; font-style: italic">#change the admin account password</span>
+$<span style="color: #DCDCCC"> </span>passwd<span style="color: #DCDCCC"> </span>admin<span style="color: #DCDCCC"> </span><span style="color: #7F9F7F; font-style: italic">#change the admin account password</span>
 </code></pre></div>
 <h3 id="generate_proxmox_api_token">Generate Proxmox API Token<a class="headerlink" href="#generate_proxmox_api_token" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Set up an API token for provisioning resources in Proxmox (with the newly created admin account):</li>
 </ul>
-<div class="highlight" style="background: #0d1117"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>role<span style="color: #6E7681"> </span>add<span style="color: #6E7681"> </span>TerraformProv<span style="color: #6E7681"> </span><span style="color: #79C0FF">\</span>
--privs<span style="color: #6E7681"> </span><span style="color: #A5D6FF">&quot;Datastore.AllocateSpace Datastore.Audit Pool.Allocate Sys.Audit Sys.Console Sys.Modify VM.Allocate VM.Audit VM.Clone VM.Config.CDROM VM.Config.Cloudinit VM.Config.CPU VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Migrate VM.Monitor VM.PowerMgmt SDN.Use SDN.Allocate SDN.Audit&quot;</span>
+<div class="highlight" style="background: #3f3f3f"><pre style="line-height: 125%;"><span></span><code>$<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>role<span style="color: #DCDCCC"> </span>add<span style="color: #DCDCCC"> </span>TerraformProv<span style="color: #DCDCCC"> </span><span style="color: #CC9393">\</span>
+-privs<span style="color: #DCDCCC"> </span><span style="color: #CC9393">&quot;Datastore.AllocateSpace Datastore.Audit Pool.Allocate Sys.Audit Sys.Console Sys.Modify VM.Allocate VM.Audit VM.Clone VM.Config.CDROM VM.Config.Cloudinit VM.Config.CPU VM.Config.Disk VM.Config.HWType VM.Config.Memory VM.Config.Network VM.Config.Options VM.Migrate VM.Monitor VM.PowerMgmt SDN.Use SDN.Allocate SDN.Audit&quot;</span>
 
-$<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>user<span style="color: #6E7681"> </span>add<span style="color: #6E7681"> </span>tf-user@pve
+$<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>user<span style="color: #DCDCCC"> </span>add<span style="color: #DCDCCC"> </span>tf-user@pve
 
-$<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>aclmod<span style="color: #6E7681"> </span>/<span style="color: #6E7681"> </span>-user<span style="color: #6E7681"> </span>tf-user@pve<span style="color: #6E7681"> </span>-role<span style="color: #6E7681"> </span>TerraformProv
+$<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>aclmod<span style="color: #DCDCCC"> </span>/<span style="color: #DCDCCC"> </span>-user<span style="color: #DCDCCC"> </span>tf-user@pve<span style="color: #DCDCCC"> </span>-role<span style="color: #DCDCCC"> </span>TerraformProv
 
-$<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>user<span style="color: #6E7681"> </span>token<span style="color: #6E7681"> </span>add<span style="color: #6E7681"> </span>tf-user@pve<span style="color: #6E7681"> </span>terraform-provisioner<span style="color: #6E7681"> </span>--privsep<span style="color: #6E7681"> </span><span style="color: #A5D6FF">0</span>
+$<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>user<span style="color: #DCDCCC"> </span>token<span style="color: #DCDCCC"> </span>add<span style="color: #DCDCCC"> </span>tf-user@pve<span style="color: #DCDCCC"> </span>terraform-provisioner<span style="color: #DCDCCC"> </span>--privsep<span style="color: #DCDCCC"> </span><span style="color: #8CD0D3">0</span>
 
-<span style="color: #8B949E; font-style: italic">#make sure to copy the API token displayed in the prompt and store it in a secure place. It&#39;s required to authenticate with the </span>
-<span style="color: #8B949E; font-style: italic">#proxmox API.</span>
+<span style="color: #7F9F7F; font-style: italic">#make sure to copy the API token displayed in the prompt and store it in a secure place. It&#39;s required to authenticate with the </span>
+<span style="color: #7F9F7F; font-style: italic">#proxmox API.</span>
 
-<span style="color: #8B949E; font-style: italic">#Token needed in provider config</span>
-<span style="color: #8B949E; font-style: italic">#home-1 = xxxxxxxx-xxxxxxx-xxxxxx-xxxxxxxx</span>
+<span style="color: #7F9F7F; font-style: italic">#Token needed in provider config</span>
+<span style="color: #7F9F7F; font-style: italic">#home-1 = xxxxxxxx-xxxxxxx-xxxxxx-xxxxxxxx</span>
 
-$<span style="color: #6E7681"> </span>sudo<span style="color: #6E7681"> </span>pveum<span style="color: #6E7681"> </span>aclmod<span style="color: #6E7681"> </span>/<span style="color: #6E7681"> </span>-token<span style="color: #6E7681"> </span><span style="color: #A5D6FF">&#39;tf-user@pve!terraform-provisioner&#39;</span><span style="color: #6E7681"> </span>-role<span style="color: #6E7681"> </span>TerraformProv
+$<span style="color: #DCDCCC"> </span>sudo<span style="color: #DCDCCC"> </span>pveum<span style="color: #DCDCCC"> </span>aclmod<span style="color: #DCDCCC"> </span>/<span style="color: #DCDCCC"> </span>-token<span style="color: #DCDCCC"> </span><span style="color: #CC9393">&#39;tf-user@pve!terraform-provisioner&#39;</span><span style="color: #DCDCCC"> </span>-role<span style="color: #DCDCCC"> </span>TerraformProv
 </code></pre></div>
 <h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
 <p>These steps will help anyone get their Proxmox journey started. On a side note , I did not show how to secure SSH access for Proxmox. That is your homework!</p>

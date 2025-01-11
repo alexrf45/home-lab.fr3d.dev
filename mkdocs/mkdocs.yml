@@ -4,6 +4,7 @@ site_url: "https://prod.homelab.fr3d.dev"
 repo_url: https://github.com/alexrf45/homelab.fr3d.dev
 nav:
   - Home: index.md
+  - Hardware: hardware.md
   - Resources: resources.md
   - Projects: projects.md
   - Posts:

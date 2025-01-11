@@ -130,17 +130,17 @@
 <p><strong>NOTE</strong>*: DO NOT STORE API KEYS &amp; OTHER SENSITIVE CREDENTIALS IN YOUR DOTFILES!</p>
 <h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
 <p>Below are some quick steps to get it set up:</p>
-<div class="highlight" style="background: #0d1117"><pre style="line-height: 125%;"><span></span><code><span style="color: #8B949E; font-style: italic">#this prevents you from commiting this directory to the repo creating a weird loop</span>
-<span style="color: #E6EDF3">echo</span><span style="color: #6E7681"> </span><span style="color: #A5D6FF">&quot;.cfg&quot;</span><span style="color: #6E7681"> </span>&gt;&gt;<span style="color: #6E7681"> </span>.gitignore
+<div class="highlight" style="background: #3f3f3f"><pre style="line-height: 125%;"><span></span><code><span style="color: #7F9F7F; font-style: italic">#this prevents you from commiting this directory to the repo creating a weird loop</span>
+<span style="color: #EFEF8F">echo</span><span style="color: #DCDCCC"> </span><span style="color: #CC9393">&quot;.cfg&quot;</span><span style="color: #DCDCCC"> </span>&gt;&gt;<span style="color: #DCDCCC"> </span>.gitignore
 
-<span style="color: #8B949E; font-style: italic">#clones the repo to the .cfg directory</span>
-git<span style="color: #6E7681"> </span>clone<span style="color: #6E7681"> </span>--bare<span style="color: #6E7681"> </span>git@github.com:ORG/dotfiles.git<span style="color: #6E7681"> </span><span style="color: #79C0FF">$HOME</span>/.cfg
+<span style="color: #7F9F7F; font-style: italic">#clones the repo to the .cfg directory</span>
+git<span style="color: #DCDCCC"> </span>clone<span style="color: #DCDCCC"> </span>--bare<span style="color: #DCDCCC"> </span>git@github.com:ORG/dotfiles.git<span style="color: #DCDCCC"> $HOME</span>/.cfg
 
-<span style="color: #8B949E; font-style: italic">#store this alias in your shell rc or alias file</span>
-<span style="color: #E6EDF3">alias</span><span style="color: #6E7681"> </span><span style="color: #79C0FF">dev</span><span style="color: #FF7B72; font-weight: bold">=</span><span style="color: #A5D6FF">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span><span style="color: #6E7681"> </span>
+<span style="color: #7F9F7F; font-style: italic">#store this alias in your shell rc or alias file</span>
+<span style="color: #EFEF8F">alias</span><span style="color: #DCDCCC"> dev</span><span style="color: #F0EFD0">=</span><span style="color: #CC9393">&#39;/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME&#39;</span><span style="color: #DCDCCC"> </span>
 
-<span style="color: #8B949E; font-style: italic">#cleans up your prompt so you only see untracked files when you explicitly ask for them</span>
-dev<span style="color: #6E7681"> </span>config<span style="color: #6E7681"> </span>--local<span style="color: #6E7681"> </span>status.showUntrackedFiles<span style="color: #6E7681"> </span>no
+<span style="color: #7F9F7F; font-style: italic">#cleans up your prompt so you only see untracked files when you explicitly ask for them</span>
+dev<span style="color: #DCDCCC"> </span>config<span style="color: #DCDCCC"> </span>--local<span style="color: #DCDCCC"> </span>status.showUntrackedFiles<span style="color: #DCDCCC"> </span>no
 </code></pre></div>
 <p>A few notes on the set up above:</p>
 <ul>
