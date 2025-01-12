@@ -3,8 +3,6 @@ name: Build Website Image
 on:
   workflow_dispatch:
   push:
-    tags:
-      - 'v*'
     branches:
       - dev
 jobs:
