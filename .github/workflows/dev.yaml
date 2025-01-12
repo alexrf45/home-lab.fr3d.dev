@@ -69,7 +69,7 @@ jobs:
           DOCKER_BUILDKIT: 1
         with:
           push: true
-          tags: ${{ needs.prepare_tag.outputs.tag }}
+          tags: 'fonalex45/homelab:${{ needs.prepare_tag.outputs.tag }}'
       - name: Notify Slack Channel of finished build
         uses: act10ns/slack@v2
         with:
