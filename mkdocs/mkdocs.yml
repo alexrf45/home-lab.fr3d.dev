@@ -5,8 +5,6 @@ repo_url: "https://github.com/alexrf45/homelab.fr3d.dev?ref=dev"
 nav:
   - Home: index.md
   - Hardware: hardware.md
-  - Resources: resources.md
-  - Projects: projects.md
   - Posts:
     - Automate your Dotfiles: dotfiles_git.md
     - Proxmox Post Install Part I: pve_post_install_part_I.md

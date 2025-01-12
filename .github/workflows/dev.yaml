@@ -32,6 +32,7 @@ jobs:
           tag_prefix: ""
   deploy:
     runs-on: ubuntu-latest
+    needs: prepare_tag
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
@@ -68,7 +69,7 @@ jobs:
           DOCKER_BUILDKIT: 1
         with:
           push: true
-          tags: ${{ steps.semver.outputs.next }}
+          tags: ${{ needs.prepare_tag.outputs.next }}
       - name: Notify Slack Channel of finished build
         uses: act10ns/slack@v2
         with:
