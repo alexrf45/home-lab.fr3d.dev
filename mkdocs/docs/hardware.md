@@ -10,11 +10,5 @@ Over the course of 2024, I transformed my home lab into a form factor design tha
 
 - 
 - 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - 
