@@ -19,7 +19,7 @@
 
     
  
-<title>Resources - Fr3d</title>
+<title>Links & Resources, Creators - Fr3d</title>
 
 
 <link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -52,6 +52,16 @@
     
 
     
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
     
     
     
@@ -61,6 +71,8 @@
     <script src="https://unpkg.com/highlightjs-cobol/dist/cobol.min.js"></script>
     
     <script src="../add_hljs_highlight.js"></script>
+    
+    <script src="../search/main.js"></script>
     
 
     
@@ -90,22 +102,6 @@
                         <span property="name">Hardware</span>
                     </a>
                     <meta property="position" content="1">
-                </li>
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
-                        <span property="name">Resources</span>
-                    </a>
-                    <meta property="position" content="2">
-                </li>
-                
-                
-                <li property="itemListElement" typeof="ListItem">
-                    <a href="../projects/" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">Projects</span>
-                    </a>
-                    <meta property="position" content="3">
                 </li>
                 
                 
@@ -237,18 +233,32 @@
             <p class="text-center text-muted">Copyright &copy; 2016 - 2024 fr3d</p>
              Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
         </div>
-        <div id="terminal-mkdocs-footer-prev-next">
-            <nav class="btn-group">
-                <a href="../hardware/" title="Hardware">Previous</a>
-                |
-                <a href="../projects/" title="Projects">Next</a>
-            </nav>
-        </div>
     </div>
 </footer>
     </div>
 
     
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
     
     
 </body>

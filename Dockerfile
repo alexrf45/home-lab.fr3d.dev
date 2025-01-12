@@ -12,9 +12,9 @@ RUN apt-get update; apt-get install -y git
 COPY mkdocs/requirements.txt ./
 #RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install  -r mkdocs/requirements.txt
+RUN pip install  -r ./mkdocs/requirements.txt
 
-RUN mkdocs build -f mkdocs/mkdocs.yml
+RUN mkdocs build -f ./mkdocs/mkdocs.yml
 
 #####################################################################
 #                            Final Stage                            #
