@@ -21,10 +21,6 @@ RUN mkdocs build -f ./mkdocs/mkdocs.yml
 #####################################################################
 FROM nginx:alpine-slim
 
-LABEL "project"="homelab"
-LABEL "author"="fr3d"
-LABEL "version"="v0.0.1"
-
 # Copy the generated files to keep the image as small as possible.
 COPY --from=builder /blog/mkdocs/public /usr/share/nginx/html
 
