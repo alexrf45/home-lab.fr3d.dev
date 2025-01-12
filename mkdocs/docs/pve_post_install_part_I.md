@@ -6,9 +6,6 @@ tags: ["homelab, proxmox, virtualization, terraform"]
 date: 2024-02-13T00:30:00-04:00
 draft: false
 showToc: true
-ShowReadingTime: true
-ShowBreadCrumbs: true
-ShowPostNavLinks: true
 ---
 
 ## Prerequisites:
