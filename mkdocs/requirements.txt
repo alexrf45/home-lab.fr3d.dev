@@ -17,5 +17,3 @@ PyYAML==6.0.2
 pyyaml_env_tag==0.1
 six==1.17.0
 watchdog==6.0.0
-mkdocs-git-revision-date-plugin
-GitPython
