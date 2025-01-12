@@ -20,7 +20,6 @@ theme:
     - navigation.top.cursor_animation
     - navigation.top.search_button.hide
     - navigation.footer
-    - revision.date
   font:
     text: Fira Sans Condensed
   favicon: img/favicon.ico
@@ -46,7 +45,6 @@ markdown_extensions:
       noclasses: true             # update HTML style attr
   - pymdownx.inlinehilite
 plugins:
-  - git-revision-date
   - search
 copyright: Copyright &copy; 2016 - 2024 fr3d
 extra:
