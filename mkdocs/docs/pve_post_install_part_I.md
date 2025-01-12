@@ -9,8 +9,6 @@ showToc: true
 ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
-disableShare: true
-summary: "Home labs have never been easier to set up than now!"
 ---
 
 ## Prerequisites:
